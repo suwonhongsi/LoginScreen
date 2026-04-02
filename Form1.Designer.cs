@@ -32,6 +32,7 @@
             TextBox_2 = new TextBox();
             Button = new Button();
             Titlee = new Label();
+            errormsg = new Label();
             SuspendLayout();
             // 
             // TextBox_1
@@ -45,6 +46,7 @@
             TextBox_1.Text = "아이디";
             TextBox_1.TextChanged += TextBox_1_TextChanged;
             TextBox_1.Enter += TextBox_1_Enter;
+            TextBox_1.KeyDown += TextBox_1_KeyDown;
             TextBox_1.Leave += TextBox_1_Leave;
             // 
             // TextBox_2
@@ -58,6 +60,7 @@
             TextBox_2.Text = "패스워드";
             TextBox_2.TextChanged += TextBox_2_TextChanged;
             TextBox_2.Enter += TextBox_2_Enter;
+            TextBox_2.KeyDown += TextBox_2_KeyDown;
             TextBox_2.Leave += TextBox_2_Leave;
             // 
             // Button
@@ -84,11 +87,24 @@
             Titlee.Text = "Login";
             Titlee.Click += Titlee_Click;
             // 
+            // errormsg
+            // 
+            errormsg.AutoSize = true;
+            errormsg.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            errormsg.ForeColor = Color.Red;
+            errormsg.Location = new Point(27, 286);
+            errormsg.Name = "errormsg";
+            errormsg.Size = new Size(230, 15);
+            errormsg.TabIndex = 4;
+            errormsg.Text = "아이디 또는 비밀번호가 잘못 되었습니다.";
+            errormsg.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(445, 461);
+            Controls.Add(errormsg);
             Controls.Add(Titlee);
             Controls.Add(Button);
             Controls.Add(TextBox_2);
@@ -104,5 +120,6 @@
         private TextBox TextBox_2;
         private Button Button;
         private Label Titlee;
+        private Label errormsg;
     }
 }
